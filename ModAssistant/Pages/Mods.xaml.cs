@@ -619,5 +619,10 @@ namespace ModAssistant.Pages
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
         }
+
+        private void reloadList(object sender, RoutedEventArgs e)
+        {
+            GetAllMods();
+        }
     }
 }
