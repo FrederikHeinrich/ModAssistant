@@ -25,7 +25,9 @@ namespace ModAssistant
         {
             public const string BeatSaberAPPID = "620980";
             public const string BeatModsAPIUrl = "https://beatmods.com/api/v1/";
+            public const string TeknikAPIUrl = "https://api.teknik.io/v1/";
             public const string BeatModsURL = "https://beatmods.com";
+            public const string WeebCDNAPIURL = "https://pat.assistant.moe/api/v1.0/";
             public const string BeatModsModsOptions = "mod?status=approved";
             public const string MD5Spacer = "                                 ";
             public static readonly char[] IllegalCharacters = new char[]
@@ -36,6 +38,27 @@ namespace ModAssistant
                 '\u000f', '\u0010', '\u0011', '\u0012', '\u0013', '\u0014', '\u0015', '\u0016',
                 '\u0017', '\u0018', '\u0019', '\u001a', '\u001b', '\u001c', '\u001d', '\u001f',
             };
+        }
+
+        public class TeknikPasteResponse
+        {
+            public Result result;
+            public class Result
+            {
+                public string id;
+                public string url;
+                public string title;
+                public string syntax;
+                public DateTime? expiration;
+                public string password;
+            }
+        }
+
+        public class WeebCDNRandomResponse
+        {
+            public int index;
+            public string url;
+            public string ext;
         }
 
         public static void SendNotify(string message, string title = "Mod Assistant")
